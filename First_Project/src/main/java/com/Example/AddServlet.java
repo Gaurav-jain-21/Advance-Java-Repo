@@ -11,7 +11,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
-@WebServlet("add")
+@WebServlet("/add")
 public class AddServlet extends HttpServlet{
 	public void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
 		int i = Integer.parseInt(req.getParameter("num1"));

@@ -9,7 +9,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
-@WebServlet("sq")
+@WebServlet("/sq")
 public class SqarServlet extends HttpServlet{
 	public void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException {
 //		int k = (int)req.getAttribute("sum");
