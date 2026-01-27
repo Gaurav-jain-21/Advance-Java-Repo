@@ -9,8 +9,11 @@ import jakarta.servlet.http.HttpServletResponse;
 
 public class SqarServlet extends HttpServlet{
 	public void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException {
-		int k = (int)req.getAttribute("sum");
+//		int k = (int)req.getAttribute("sum");
+		int k = Integer.parseInt(req.getParameter("sum"));
+		k=k*k;
 		PrintWriter out = res.getWriter();
-		out.println("hello to square "+ k);
+		out.println("Result is "+k);
+		System.out.println("sq called");
 	}
 }
