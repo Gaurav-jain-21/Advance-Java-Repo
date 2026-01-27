@@ -6,11 +6,14 @@ import java.io.PrintWriter;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 public class SqarServlet extends HttpServlet{
 	public void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException {
 //		int k = (int)req.getAttribute("sum");
-		int k = Integer.parseInt(req.getParameter("sum"));
+//		int k = Integer.parseInt(req.getParameter("sum"));
+		HttpSession session= req.getSession();
+		int k= (int)session.getAttribute("sum");
 		k=k*k;
 		PrintWriter out = res.getWriter();
 		out.println("Result is "+k);

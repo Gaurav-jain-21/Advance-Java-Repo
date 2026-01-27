@@ -8,13 +8,17 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 public class AddServlet extends HttpServlet{
 	public void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
 		int i = Integer.parseInt(req.getParameter("num1"));
 		int j= Integer.parseInt(req.getParameter("num2"));
 		int sum= i+j;
-		res.sendRedirect("sq?sum="+sum);
+		HttpSession session = req.getSession();
+		session.setAttribute("sum", sum);
+		res.sendRedirect("sq");
+//		res.sendRedirect("sq?sum="+sum); //URL Rewriting
 //		PrintWriter out = res.getWriter();
 //		out.println("the sum of two number is "+ sum);
 //		req.setAttribute("sum", sum);
