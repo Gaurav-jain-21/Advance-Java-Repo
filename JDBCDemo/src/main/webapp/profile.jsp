@@ -18,7 +18,7 @@ Connection con = DriverManager.getConnection(url, "root", "Roman123@.");
 Statement st = con.createStatement();
 ResultSet rs = st.executeQuery(sql);
 
-if (rs.next()) {
+while (rs.next()) {
 %>
 
 empId: <%= rs.getInt(1) %><br/>
